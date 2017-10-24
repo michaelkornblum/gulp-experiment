@@ -1,0 +1,28 @@
+{
+  "name": "gulp-experiment",
+  "version": "1.0.0",
+  "description": "A demonstration of the Gulp streaming build system.",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/michaelkornblum/gulp-experiment.git"
+  },
+  "keywords": [
+    "gulp"
+  ],
+  "author": "Michael Kornblum",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/michaelkornblum/gulp-experiment/issues"
+  },
+  "homepage": "https://github.com/michaelkornblum/gulp-experiment#readme",
+  "dependencies": {
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-imagemin": "^3.4.0",
+    "gulp-sass": "^3.1.0"
+  }
+}
