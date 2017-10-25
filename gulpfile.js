@@ -1,17 +1,21 @@
+// node packages
 var gulp = require('gulp');
 var del = require('del');
 var imagemin = require('gulp-imagemin');
 var sass = require('gulp-sass');
 
+// default gulp task
 gulp.task('default', function(){
     return gulp.src('./*.html')
     .pipe(gulp.dest('./build'));
 });
 
+// clean build directory
 gulp.task('clean', function(){
     return del('./build');
 });
 
+// minimize images
 gulp.task('images',function(){
     return gulp.src(
         [
@@ -25,13 +29,17 @@ gulp.task('images',function(){
         imagemin.gifsicle({ interlaced: true }),
         imagemin.jpegtran({ progressive: true }),
         imagemin.optipng({ optimizationLevel: 5 }),
-        imagemin.svgo({ plugins: [{ removeViewbox: true}]})
+        imagemin.svgo({ packages: [{ removeViewbox: true}]})
     ]))
     .pipe(gulp.dest('build/images/'));
 });
 
+// process sass files
 gulp.task('styles', function(){
     gulp.src('styles/*.scss')
-    .pipe(sass().on('error', sass.logError))
+    .pipe(sass({ outputStyle: 'compressed' })
+        .on('error', sass.logError))
     .pipe(gulp.dest('./build/styles'));
 });
+
+
