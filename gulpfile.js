@@ -3,6 +3,7 @@ var gulp = require('gulp');
 var del = require('del');
 var imagemin = require('gulp-imagemin');
 var sass = require('gulp-sass');
+var webpack = require('webpack-stream');
 
 // default gulp task
 gulp.task('default', function(){
@@ -42,4 +43,9 @@ gulp.task('styles', function(){
     .pipe(gulp.dest('./build/styles'));
 });
 
-
+// manage javascript bundles
+gulp.task('scripts', function(){
+    gulp.src('./scripts/main.js')
+        .pipe(webpack(require('./webpack.config.js')))
+        .pipe(gulp.dest('./build/scripts'));
+});

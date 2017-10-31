@@ -23,6 +23,12 @@
     "del": "^3.0.0",
     "gulp": "^3.9.1",
     "gulp-imagemin": "^3.4.0",
-    "gulp-sass": "^3.1.0"
+    "gulp-sass": "^3.1.0",
+    "jshint": "^2.9.5",
+    "webpack": "^3.8.1",
+    "webpack-stream": "^4.0.0"
+  },
+  "devDependencies": {
+    "jshint-loader": "^0.8.4"
   }
 }
